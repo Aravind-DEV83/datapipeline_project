@@ -1,0 +1,27 @@
+{
+  "description": "A Batch pipeline that read previous application file from the gcs, perform transformations and load it to BigQuery.",
+  "name": "prev_gcs_to_bq",
+  "parameters": [
+    {
+      "regexes": [
+        "^gs:\\/\\/[^\\n\\r]+$"
+      ],
+      "name": "input",
+      "helpText": "Path of the file pattern glob to read from - for example, gs://dataflow-samples/shakespeare/kinglear.txt",
+      "label": "Input Cloud Storage file(s)"
+    },
+    {
+      "name": "output",
+      "helpText": "Table ID, ex: project:Dataset.Table",
+      "label": "Schema"
+    },
+    {
+        "regexes": [
+          "^gs:\\/\\/[^\\n\\r]+$"
+        ],
+        "name": "temproary_location",
+        "helpText": "Path and filename prefix for writing temp files - for example, gs://MyBucket/temp/",
+        "label": "Temproary Location for GCS files"
+      }
+  ]
+}
