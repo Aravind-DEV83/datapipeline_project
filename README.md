@@ -6,6 +6,8 @@ The objective of this project is to build an end-to-end data pipeline that can h
 
 #Solution Architecture
 
+![etl](https://github.com/Aravind-DEV83/datapipeline_project/assets/129648011/6a9280d4-16d9-487a-8054-15294ab1c88e)
+
 1. The user will upload a CSV file to the cloud storage bucket using gsutil command.
 
 2. Cloud function - 1 will trigger a dataflow job (Job name: batch-pipeline-a) that reads from the CSV file, does some transformations, and writes the transformed data to another GCS bucket as a curated file. 
@@ -14,6 +16,3 @@ The objective of this project is to build an end-to-end data pipeline that can h
 
 5. Streaming Pipeline by Leveraging python to simulate messages from a dataset and publish them to cloud Pub/Sub.
 Data Flow will process the streaming messages from pub/sub, applying transformations and writing the processed data to BigQuery.
-
-
-
